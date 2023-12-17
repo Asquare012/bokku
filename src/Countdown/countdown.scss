@@ -1,0 +1,72 @@
+$yellow: #7e7e09bd;
+$blue: #050536;
+$black: #000000;
+$white: #ffffff;
+
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Countdown {
+    height: 100px;
+    background-color: $black;
+    @include flex;
+    font-size: 20px;
+    color: $white;
+
+    .Handle {
+        font-size: 16px;
+    }
+
+    .Time {
+        font-size: 15px;
+
+        span {
+            font-size: 25px;
+            font-weight: 600;
+            padding: 0 2px;
+            color: #f1f107;
+            text-shadow: 2px 2px 2px $black;
+        }
+    }
+}
+
+// RESPONSIVENESS
+// MOBILE
+@media screen and (max-width:600px) {
+    .Countdown {
+        flex-direction: column;
+
+        .Handle {
+            font-size: 15px;
+            padding-bottom: 10px;
+        }
+
+        .Time {
+            font-size: 16px;
+
+            span {
+                font-size: 25px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:400px) {
+    .Countdown {
+
+        .Handle {
+            font-size: 15px;
+        }
+
+        .Time {
+            font-size: 14px;
+
+            span {
+                font-size: 22px;
+            }
+        }
+    }
+}

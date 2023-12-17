@@ -1,0 +1,142 @@
+$yellow: #222201;
+$blue: #01010e;
+$black: #000000;
+$white: #ffffff;
+
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.About {
+    height: 600px;
+    padding-top: 10px;
+    background-color: $blue;
+    color: $white;
+
+    &>div {
+        @include flex;
+    }
+
+    .Top {
+        height: 5%;
+        font-size: 20px;
+        font-weight: lighter;
+        font-family: 'Preahvihear', sans-serif;
+    }
+
+    .Mid {
+        height: 40%;
+        font-size: 15px;
+        padding: 0 15%;
+        line-height: 35px;
+        text-align: center
+    }
+
+    .Bottom {
+        @include flex;
+        gap: 20px;
+        height: 45%;
+
+        div {
+            @include flex;
+            flex-direction: column;
+            height: 100%;
+            width: 40%;
+            background-color: #413f3f25;
+            font-size: 15px;
+            padding: 5px;
+            text-align: center;
+            line-height: 25px;
+            color: azure;
+            border-radius: 10px;
+            transition: transform 0.2s ease-in-out;
+
+            &:hover,
+            &:active {
+                transform: scale(1.05);
+            }
+
+            h2 {
+                font-size: 20px;
+                padding-bottom: 20px;
+                font-weight: lighter;
+                font-family: 'Preahvihear', sans-serif;
+            }
+        }
+    }
+}
+
+// RESPONSIVENESS
+
+// TABLET
+@media screen and (max-width:885px) {
+    .About {
+        height: 700px;
+
+        .Mid {
+            padding: 0 10%;
+        }
+    }
+}
+
+@media screen and (max-width:700px) {
+    .About {
+        height: 750px;
+
+        .Mid {
+            padding: 0 5%;
+        }
+
+        .Bottom {
+            padding: 0 2%;
+
+            div {
+                width: 55%;
+                height: 100%;
+            }
+        }
+    }
+}
+
+// MOBILE
+@media screen and (max-width:560px) {
+    .About {
+        height: 1000px;
+
+        .Bottom {
+            flex-direction: column;
+
+            div {
+                width: 90%;
+                height: 100%;
+            }
+        }
+    }
+}
+
+// smaller mobile
+
+@media screen and (max-width:455px) {
+    .About {
+        height: 800px;
+
+        .Mid {
+            line-height: 25px;
+        }
+
+        .Bottom {
+            div {
+                height: 110%;
+                line-height: 20px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:395px) {
+    .About {
+        height: 1000px;
+    }
+}
